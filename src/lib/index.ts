@@ -1,4 +1,4 @@
-export { addToast } from './scripts/storeToasts.svelte';
+export { toast } from './scripts/storeToasts.svelte';
 export { deleteToast } from './scripts/storeToasts.svelte';
 
 export { default as Toast } from './components/Toast.svelte';

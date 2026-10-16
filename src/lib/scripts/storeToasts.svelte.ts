@@ -1,4 +1,4 @@
-import type { IToast } from '#lib/models/IToast.ts';
+import type { IToast } from '../models/IToast.ts';
 
 let INTERVAL = 4000;
 
