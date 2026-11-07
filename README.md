@@ -7,6 +7,13 @@
 
 `<Toaster/>`
 
+Расположение всплывающих уведомлений на экране можно настроить с помощью параметра `position` компонента Toaster вариантами
+`'topLeft', 'topCenter', 'topRight', 'bottomLeft', 'bottomCenter', 'bottomRight'`:
+
+`<Toaster position='topRight'/>`
+
+##
+
 и далее в коде используйте метод `toast()` для отправки уведомления:
 
 `toast({title:'Привет', content:'Как дела?'})`
@@ -15,12 +22,16 @@
 
 `toast({title:'<i>Привет</i>', content:'<b class='text-uppercase'>Как дела?</b>'})`
 
+##
+
 Уведомление можно стилизовать классами bootstrap через параметр `_class`:
 
 `toast({title:'Привет', content:'<b class='text-uppercase'>Как дела?</b>', _class:'bg-info'})`
 
-либо дополнительными параматрами методами:
+либо дополнительными параметрами объекта, передаваемого в метода toast:
 
 - `bg` и `fg` `('body', 'primary', 'accent', 'success', 'danger', 'warning', 'info', 'inverse', 'secondary', 'black', 'white';)`
 - `opacity` `('10', '20', '30', '40', '50', '60', '70', '80', '90')`
 - `shadow` `('shadow-none', 'shadow-sm', 'shadow', 'shadow-lg')`
+
+  `toast({title:'<i>Привет</i>', content:'<b class='text-uppercase'>Как дела?</b>', bg:'info'})`
