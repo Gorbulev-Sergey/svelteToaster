@@ -5,12 +5,12 @@
 
 Для использования пакета нужно в файле главного макета добавить:
 
-`<Toaster/>`
+`<Toaster />`
 
 Расположение всплывающих уведомлений на экране можно настроить с помощью параметра `position` компонента Toaster вариантами
 `'topLeft', 'topCenter', 'topRight', 'bottomLeft', 'bottomCenter', 'bottomRight'`:
 
-`<Toaster position='topRight'/>`
+`<Toaster position='topRight' />`
 
 ##
 
@@ -28,10 +28,12 @@
 
 `toast({title:'Привет', content:'<b class='text-uppercase'>Как дела?</b>', _class:'bg-info'})`
 
-либо дополнительными параметрами объекта, передаваемого в метода toast:
+либо дополнительными параметрами:
 
 - `bg` и `fg` `('body', 'primary', 'accent', 'success', 'danger', 'warning', 'info', 'inverse', 'secondary', 'black', 'white';)`
 - `opacity` `('10', '20', '30', '40', '50', '60', '70', '80', '90')`
 - `shadow` `('shadow-none', 'shadow-sm', 'shadow', 'shadow-lg')`
 
-  `toast({title:'<i>Привет</i>', content:'<b class='text-uppercase'>Как дела?</b>', bg:'info'})`
+Например:
+
+`toast({title:'<i>Привет</i>', content:'<b class='text-uppercase'>Как дела?</b>', bg:'info', opacity:'shadow-sm'})`
