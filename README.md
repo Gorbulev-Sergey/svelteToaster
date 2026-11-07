@@ -5,16 +5,22 @@
 
 Для использования пакета нужно в файле главного макета добавить:
 
-`<Toasts/>`
+`<Toaster/>`
 
 и далее в коде используйте метод `toast()` для отправки уведомления:
 
 `toast({title:'Привет', content:'Как дела?'})`
 
-Параметр `content` может принимать не только простой текст, но и любые html-теги:
+Параметры `title` и `content` могут принимать не только простой текст, но и любые html-теги:
 
-`toast({title:'Привет', content:'<b class='text-uppercase'>Как дела?</b>'})`
+`toast({title:'<i>Привет</i>', content:'<b class='text-uppercase'>Как дела?</b>'})`
 
 Уведомление можно стилизовать классами bootstrap через параметр `_class`:
 
 `toast({title:'Привет', content:'<b class='text-uppercase'>Как дела?</b>', _class:'bg-info'})`
+
+либо дополнительными параматрами методами:
+
+- `bg` и `fg` `('body', 'primary', 'accent', 'success', 'danger', 'warning', 'info', 'inverse', 'secondary', 'black', 'white';)`
+- `opacity` `('10', '20', '30', '40', '50', '60', '70', '80', '90')`
+- `shadow` `('shadow-none', 'shadow-sm', 'shadow', 'shadow-lg')`

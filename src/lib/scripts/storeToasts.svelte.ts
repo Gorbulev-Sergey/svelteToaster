@@ -1,26 +1,43 @@
-import type { IToast } from '../models/IToast.ts';
+import type { Colors, IToast } from '../models/IToast.ts';
 
 let INTERVAL = 4000;
-
-export function Toast(
-	title?: string,
-	content?: string,
-	timeout = INTERVAL,
-	_class = 'bg-1'
-): IToast {
-	return {
-		id: crypto.randomUUID(),
-		title,
-		content,
-		timeout,
-		_class
-	};
-}
 
 let timers = new Map();
 export let STORE = $state<{ toasts: IToast[] }>({ toasts: [] });
 
-export function toast(toast: IToast) {
+export function toast(toast: {
+	title?: string;
+	content?: string;
+	timeout?: number;
+	bg?:
+		| 'body'
+		| 'primary'
+		| 'accent'
+		| 'success'
+		| 'danger'
+		| 'warning'
+		| 'info'
+		| 'inverse'
+		| 'secondary'
+		| 'black'
+		| 'white';
+	fg?:
+		| 'body'
+		| 'primary'
+		| 'accent'
+		| 'success'
+		| 'danger'
+		| 'warning'
+		| 'info'
+		| 'inverse'
+		| 'secondary'
+		| 'black'
+		| 'white';
+	opacity?: '10' | '20' | '30' | '40' | '50' | '60' | '70' | '80' | '90';
+	shadow?: 'shadow-none' | 'shadow-sm' | 'shadow' | 'shadow-lg';
+	_class?: string;
+	id?: string;
+}) {
 	toast.id ||= crypto.randomUUID();
 	toast.timeout ||= INTERVAL;
 	STORE.toasts.push(toast);
