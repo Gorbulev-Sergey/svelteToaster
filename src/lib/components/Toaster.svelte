@@ -4,6 +4,7 @@
 
 	interface IProps {
 		position?: 'topLeft' | 'topCenter' | 'topRight' | 'bottomLeft' | 'bottomCenter' | 'bottomRight';
+		zIndex?: number;
 	}
 
 	let positionStyle = $derived.by(() => {
@@ -23,12 +24,12 @@
 		}
 	});
 
-	let { position = 'bottomCenter' }: IProps = $props();
+	let { position = 'bottomCenter', zIndex = 10000 }: IProps = $props();
 </script>
 
 <div
 	class="position-absolute d-flex flex-column-reverse gap-3 p-5"
-	style="z-index: 10000; {positionStyle}"
+	style="z-index: {zIndex}; {positionStyle}"
 >
 	{#each [...STORE.toasts].reverse() as toast}
 		<Toast {toast} onClose={() => deleteToast(toast.id)} />

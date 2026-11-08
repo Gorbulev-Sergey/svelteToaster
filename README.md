@@ -1,8 +1,6 @@
 ## Svelte TOASTER
 
-<a href="https://github.com/Gorbulev-Sergey/svelteToaster" title="GitHub">
-  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="25" height="25">
-</a>
+https://github.com/Gorbulev-Sergey/svelteToaster
 
 Это пакет для использования всплывающих уведомлений в твоём sveltekit приложении.
 Для стилизации используется **bootstrap 6**.
@@ -11,10 +9,14 @@
 
 `<Toaster />`
 
-Расположение всплывающих уведомлений на экране можно настроить с помощью параметра `position` компонента Toaster вариантами
+Расположение всплывающих уведомлений на экране можно настроить с помощью параметра `position` вариантами:
 `'topLeft', 'topCenter', 'topRight', 'bottomLeft', 'bottomCenter', 'bottomRight'`:
 
 `<Toaster position='topRight' />`
+
+z-index (по умолчанию он равен 10000) всплывающих уведомлений можно изменить с помощью параметра `zIndex`:
+
+`<Toaster position='topRight' zIndex={500} />`
 
 ##
 
